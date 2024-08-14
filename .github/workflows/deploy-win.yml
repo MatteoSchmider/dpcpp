@@ -21,8 +21,12 @@ jobs:
           name: build-win-output-${{ inputs.backend }}
           path: dpcpp
 
-      - name: test
-        run: dir
-      # - name: Download build artifacts
-      # - name: Setup paths
-      # - name: Build and Push => use normal github action for this here!
+      - name: Build & push Docker image
+        uses: mr-smithers-excellent/docker-build-push@v6
+        with:
+          registry: docker.io
+          image: matteoschmider/dpcpp
+          tags: win-${{ inputs.backend }}-latest, win-${{ inputs.backend }}-${{ github.ref_name }}
+          dockerfile: deploy/win/${{ inputs.backend }}.Dockerfile
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}

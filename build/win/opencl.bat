@@ -2,9 +2,6 @@
 choco install ninja -y
 
 :: set compiler paths
-dir 
-dir "C:\Program Files"
-dir "C:\Program Files\Microsoft Visual Studio\2022\Enterprise
 call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
 
 :: download dpc++ sources into C:\dpcpp
