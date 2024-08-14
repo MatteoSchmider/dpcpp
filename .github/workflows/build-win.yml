@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build dpc++ compiler
-        run: build/win/${{ inputs.backend }}.ps1
+        run: build/win/${{ inputs.backend }}.bat
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
