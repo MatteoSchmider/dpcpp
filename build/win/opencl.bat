@@ -12,4 +12,5 @@
 :: python "dpcpp\buildbot\configure.py" -t Release
 :: python "dpcpp\buildbot\compile.py" -j 16
 mkdir dpcpp
-mkdir dpcpp/build
+cd dpcpp
+mkdir build
