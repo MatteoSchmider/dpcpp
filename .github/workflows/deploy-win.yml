@@ -14,7 +14,13 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v4
-        
+
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build-win-output-${{ inputs.backend }}
+          path: dpcpp
+
       - name: test
         run: dir
       # - name: Download build artifacts
