@@ -1,0 +1,12 @@
+name: Push Action
+on:
+  push
+
+jobs:
+  matrix-build-win:
+    strategy:
+      matrix:
+        backend: [cuda, opencl]
+    uses: MatteoSchmider/dpcpp/.github/workflows/build-win.yml@main
+    with:
+      backend: ${{ matrix.backend }}

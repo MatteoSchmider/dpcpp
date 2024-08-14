@@ -1,0 +1,22 @@
+name: Deploy Windows
+
+on:
+  workflow_call:
+    inputs:
+      backend:
+        required: true
+        type: string
+
+
+jobs:
+  deploy-win:
+    runs-on: windows-2022
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v4
+        
+      - name: test
+        run: dir
+      # - name: Download build artifacts
+      # - name: Setup paths
+      # - name: Build and Push => use normal github action for this here!

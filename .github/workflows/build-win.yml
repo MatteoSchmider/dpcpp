@@ -1,0 +1,25 @@
+name: Build Windows
+
+on:
+  workflow_call:
+    inputs:
+      backend:
+        required: true
+        type: string
+
+
+jobs:
+  build-win:
+    runs-on: windows-2022
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v4
+
+      - name: Build dpc++ compiler using docker
+        run: dir && cd build/win && dir # ${{ inputs.backend }}.ps1
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-win-output-${{ inputs.backend }}
+          path: build/win/dpcpp/build
