@@ -10,5 +10,5 @@ git clone --config core.autocrlf=false https://github.com/intel/llvm -b sycl
 move "llvm" "dpcpp"
 
 :: configure and compile dpc++
-python "dpcpp\buildbot\configure.py" --cuda -t Release --cmake-opt "-DCUDA_CUDART_LIBRARY=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\lib\x64\cudart.lib" --cmake-opt "-DCUDA_TOOLKIT_ROOT_DIR=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6"
+python "dpcpp\buildbot\configure.py" --cuda -t Release --cmake-opt "-DCUDA_TOOLKIT_ROOT_DIR=C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.6"
 python "dpcpp\buildbot\compile.py" -j 16
