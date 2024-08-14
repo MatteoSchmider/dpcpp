@@ -20,6 +20,9 @@ jobs:
 
       - name: test
         run: dir
+        
+      - name: test
+        run: dir dpcpp
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
