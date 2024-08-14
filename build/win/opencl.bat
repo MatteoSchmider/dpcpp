@@ -10,4 +10,4 @@ move "llvm" "dpcpp"
 
 :: configure and compile dpc++
 python "dpcpp\buildbot\configure.py" -t Release
-:: python "dpcpp\buildbot\compile.py" -j 16
+python "dpcpp\buildbot\compile.py" -j 16

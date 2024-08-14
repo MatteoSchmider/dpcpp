@@ -18,14 +18,8 @@ jobs:
       - name: Build dpc++ compiler
         run: build/win/${{ inputs.backend }}.bat
 
-      - name: test
-        run: dir
-        
-      - name: test
-        run: dir dpcpp
-
       - name: Upload artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4.3.5
         with:
           name: build-win-output-${{ inputs.backend }}
           path: dpcpp/build
